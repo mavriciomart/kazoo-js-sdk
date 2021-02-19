@@ -5,16 +5,18 @@ Proof of Concept
 ## Usage
 
 ```javascript
-import { sdk as KazooSDK } from "kazoo-js-sdk";
+import { sdk } from "kazoo-js-sdk";
 
 // Pass configuration
-const sdk = new KazooSDK({ host: "sandbox.example.com/v1" });
+const KazooSDK = new sdk({ host: "sandbox.example.com/v1" });
 
-const { authToken } = await sdk.authorize(
+const { authToken } = await KazooSDK.authorize(
   "username",
   "password",
   "account_name"
 );
 
-const conferences = await sdk.Conferences.get();
+const conferences = await KazooSDK.Conferences.get();
+
+console.log("Conferences", conferences);
 ```
