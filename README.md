@@ -8,7 +8,7 @@ Proof of Concept
 import { sdk } from "kazoo-js-sdk";
 
 // Pass configuration
-const KazooSDK = new sdk({ host: "sandbox.example.com/v1" });
+const KazooSDK = sdk({ host: "sandbox.example.com/v1" });
 
 const { authToken } = await KazooSDK.authorize(
   "username",
