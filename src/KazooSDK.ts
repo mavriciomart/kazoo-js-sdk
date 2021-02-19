@@ -1,10 +1,10 @@
-import { ApiService } from "~services/api";
-import Config from "~services/config";
+import { ApiService } from "./services/api";
+import Config from "./services/config";
 // modules
-import Conferences from "~modules/Conferences";
-import Users from "~modules/Users";
+import Conferences from "./modules/Conferences";
+import Users from "./modules/Users";
 // types
-import { ConfigOptions } from "~types/config";
+import { ConfigOptions } from "./types/config";
 
 class KazooSDK {
   config: ConfigOptions;

@@ -1,8 +1,8 @@
 import md5 from "md5";
 import StorageService from "./storage";
-import { ConfigOptions } from "~types/config";
-import { RequestMethods } from "~types/request";
-import { parseResponse, isTokenInvalid } from "~utils/api";
+import { ConfigOptions } from "./../types/config";
+import { RequestMethods } from "./../types/request";
+import { parseResponse, isTokenInvalid } from "./../utils/api";
 
 interface Credentials {
   authToken: string;

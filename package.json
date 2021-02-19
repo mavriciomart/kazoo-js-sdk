@@ -1,15 +1,17 @@
 {
   "name": "kazoo-js-sdk",
   "version": "0.0.1",
+  "source": "src/KazooSDK.ts",
   "main": "dist/index.js",
   "scripts": {
-    "start": "parcel ./src/index.ts",
-    "build": "parcel build ./src/index.ts"
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
-    "md5": "^2.3.0",
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^4.1.5"
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0"
   }
 }
