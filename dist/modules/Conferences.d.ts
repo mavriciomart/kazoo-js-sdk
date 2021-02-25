@@ -1,4 +1,5 @@
 import { ApiService } from "./../services/api";
+import BaseModule from "./Base";
 declare type MemberConfig = {
     pins: string[];
     numbers: string[];
@@ -14,9 +15,7 @@ interface Conference {
     member: MemberConfig;
     moderator: MemberConfig;
 }
-declare class Conferences {
-    endpoint: string;
-    api: ApiService;
+declare class Conferences extends BaseModule {
     call: Promise<unknown> | null;
     constructor(api: ApiService);
     get(): Promise<{

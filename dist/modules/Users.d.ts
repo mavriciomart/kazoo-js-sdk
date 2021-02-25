@@ -1,8 +1,6 @@
 import { ApiService } from "./../services/api";
-declare class Users {
-    endpoint: string;
-    api: ApiService;
-    call: Promise<unknown> | null;
+import BaseModule from "./Base";
+declare class Users extends BaseModule {
     constructor(api: ApiService);
     get(): Promise<unknown>;
 }

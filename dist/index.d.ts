@@ -1,11 +1,13 @@
 import { ApiService } from "./services/api";
 import Conferences from "./modules/Conferences";
+import Devices from "./modules/Devices";
 import Users from "./modules/Users";
 import { ConfigOptions } from "./types/config";
 declare class KazooSDK {
     config: ConfigOptions;
     api: ApiService;
     Conferences: Conferences;
+    Devices: Devices;
     Users: Users;
     constructor(config: ConfigOptions);
     /**

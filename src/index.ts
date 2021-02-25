@@ -2,6 +2,7 @@ import { ApiService } from "./services/api";
 import Config from "./services/config";
 // modules
 import Conferences from "./modules/Conferences";
+import Devices from "./modules/Devices";
 import Users from "./modules/Users";
 // types
 import { ConfigOptions } from "./types/config";
@@ -10,6 +11,7 @@ class KazooSDK {
   config: ConfigOptions;
   api: ApiService;
   Conferences: Conferences;
+  Devices: Devices;
   Users: Users;
 
   constructor(config: ConfigOptions) {
@@ -18,6 +20,7 @@ class KazooSDK {
 
     // SDK modules / endpoints
     this.Conferences = new Conferences(this.api);
+    this.Devices = new Devices(this.api);
     this.Users = new Users(this.api);
   }
 
