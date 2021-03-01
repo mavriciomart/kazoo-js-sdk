@@ -65,8 +65,8 @@ export class ApiService {
    * @param credentials You can skip both username and password and provide a md5 hash of both e.g. md5(usernema:password)
    */
   authenticate(
-    username: string,
-    password: string,
+    username: string | null,
+    password: string | null,
     accountName: string,
     credentials?: string
   ) {
@@ -132,14 +132,14 @@ export class ApiService {
 
       if (isTokenInvalid(credentials.authToken)) {
         // re authenticate and run request with new credentials
-        /* return this.authenticate(
-           "",
-           "",
-           credentials.accountName,
-           credentials.credentials
-         )
-           .then(() => request(getCredentials(this.storage)))
-           .catch((error) => reject(error)); */
+        return this.authenticate(
+          "",
+          "",
+          credentials.accountName,
+          credentials.credentials
+        )
+          .then(() => request(this.storage.get("credentials")))
+          .catch((error) => reject(error));
       }
 
       return request(credentials);

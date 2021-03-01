@@ -17,7 +17,7 @@ declare class KazooSDK {
      * @param accountName Account name
      * @param credentials You can skip both username and password and provide a md5 hash of both e.g. md5(usernema:password)
      */
-    authenticate(username: string, password: string, accountName: string, credentials?: string): Promise<unknown>;
+    authenticate(username: string | null, password: string | null, accountName: string, credentials?: string): Promise<unknown>;
 }
 export declare const sdk: (config: ConfigOptions) => KazooSDK;
 export {};

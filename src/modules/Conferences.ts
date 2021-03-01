@@ -20,7 +20,6 @@ interface Conference {
 class Conferences extends BaseModule {
   call: Promise<unknown> | null;
 
-  // shared ApiServive === shared Storage === happiness
   constructor(api: ApiService) {
     super(api);
     this.endpoint = "conferences";
