@@ -118,7 +118,7 @@ export class ApiService {
         fetch(`${config.host}/accounts/${currentAccountId}/${endpoint}`, {
           method,
           headers,
-          ...(body && { body: JSON.stringify(body) }),
+          ...(body && { body: JSON.stringify({ data: body }) }),
         })
           .then(parseResponse)
           .then((response) => {
