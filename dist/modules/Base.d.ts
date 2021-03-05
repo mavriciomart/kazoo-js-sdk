@@ -4,5 +4,8 @@ declare class BaseModule {
     api: ApiService;
     call: Promise<unknown> | null;
     constructor(api: ApiService);
+    get(): Promise<unknown>;
+    getById(id: string): Promise<unknown>;
+    update(id: string, data: unknown): void;
 }
 export default BaseModule;

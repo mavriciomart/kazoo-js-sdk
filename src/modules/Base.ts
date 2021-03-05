@@ -10,6 +10,20 @@ class BaseModule {
   constructor(api: ApiService) {
     this.api = api;
   }
+
+  get() {
+    this.call = this.api.sendRequest(this.endpoint, "GET");
+    return this.call;
+  }
+
+  getById(id: string) {
+    this.call = this.api.sendRequest(`${this.endpoint}/${id}`, "GET");
+    return this.call;
+  }
+
+  update(id: string, data: unknown) {
+    this.call = this.api.sendRequest(`${this.endpoint}/${id}`, "PATCH", data);
+  }
 }
 
 export default BaseModule;

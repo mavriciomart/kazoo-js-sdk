@@ -23,13 +23,21 @@ declare type Device = {
         expire_seconds: number;
     };
 };
+declare type DeviceUpdate = {
+    do_not_disturb?: {
+        enabled: boolean;
+    };
+};
 declare class Devices extends BaseModule {
-    constructor(api: ApiService);
-    get(): Promise<{
+    get: () => Promise<{
         data: Device[];
     }>;
-    getById(id: string): Promise<{
+    getById: (id: string) => Promise<{
         data: Device;
     }>;
+    update: (id: string, data: DeviceUpdate) => Promise<{
+        data: Device;
+    }>;
+    constructor(api: ApiService);
 }
 export default Devices;

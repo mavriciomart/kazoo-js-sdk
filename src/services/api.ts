@@ -96,7 +96,7 @@ export class ApiService {
     return authPromise;
   }
 
-  sendRequest(endpoint: string, method: RequestMethods) {
+  sendRequest(endpoint: string, method: RequestMethods, body: any = null) {
     const { config } = this;
 
     const requestPromise = new Promise((resolve, reject) => {
@@ -118,6 +118,7 @@ export class ApiService {
         fetch(`${config.host}/accounts/${currentAccountId}/${endpoint}`, {
           method,
           headers,
+          ...(body && { body: JSON.stringify(body) }),
         })
           .then(parseResponse)
           .then((response) => {

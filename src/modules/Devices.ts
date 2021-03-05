@@ -22,20 +22,20 @@ type Device = {
   };
 };
 
+type DeviceUpdate = {
+  do_not_disturb?: {
+    enabled: boolean;
+  };
+};
+
 class Devices extends BaseModule {
+  get: () => Promise<{ data: Device[] }>;
+  getById: (id: string) => Promise<{ data: Device }>;
+  update: (id: string, data: DeviceUpdate) => Promise<{ data: Device }>;
+
   constructor(api: ApiService) {
     super(api);
     this.endpoint = "devices";
-  }
-
-  get() {
-    this.call = this.api.sendRequest(this.endpoint, "GET");
-    return this.call as Promise<{ data: Device[] }>;
-  }
-
-  getById(id: string) {
-    this.call = this.api.sendRequest(`${this.endpoint}/${id}`, "GET");
-    return this.call as Promise<{ data: Device }>;
   }
 }
 
