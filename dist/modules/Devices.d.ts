@@ -22,6 +22,9 @@ declare type Device = {
         password: string;
         expire_seconds: number;
     };
+    do_not_disturb?: {
+        enabled: boolean;
+    };
 };
 declare type DeviceUpdate = {
     do_not_disturb?: {

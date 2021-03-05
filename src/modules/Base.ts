@@ -23,6 +23,7 @@ class BaseModule {
 
   update(id: string, data: unknown) {
     this.call = this.api.sendRequest(`${this.endpoint}/${id}`, "PATCH", data);
+    return this.call;
   }
 }
 
