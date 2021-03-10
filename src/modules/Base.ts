@@ -1,6 +1,5 @@
 import { ApiService } from "./../services/api";
 import { buildRequestUrl } from "../utils/url";
-import { URLParams } from "./../types/request";
 
 class BaseModule {
   endpoint: string;
@@ -13,9 +12,9 @@ class BaseModule {
     this.api = api;
   }
 
-  get(options?: URLParams) {
+  get(options?: unknown) {
     this.call = this.api.sendRequest(
-      buildRequestUrl(this.endpoint, options),
+      buildRequestUrl(this.endpoint, options || {}),
       "GET"
     );
     return this.call;

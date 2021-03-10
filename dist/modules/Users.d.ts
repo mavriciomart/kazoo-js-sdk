@@ -1,6 +1,8 @@
 import { ApiService } from "./../services/api";
-import { URLParams } from "../types/request";
 import BaseModule from "./Base";
+declare type URLParams = {
+    paginate?: boolean;
+};
 declare type User = {
     id: string;
     email: string;
