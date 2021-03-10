@@ -4,10 +4,11 @@ const formatQueryString = (key: string, value: string) => {
   return `${key}=${value}`;
 };
 
-const buildUrlQueryParams = ({ paginate }: URLParams) => {
+const buildUrlQueryParams = (options: URLParams) => {
+  const { paginate } = options;
   let params = {};
 
-  if (paginate) {
+  if (options.hasOwnProperty("paginate")) {
     params = { ...params, paginate };
   }
 
