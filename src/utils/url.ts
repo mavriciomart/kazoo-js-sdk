@@ -18,7 +18,7 @@ const buildUrlQueryParams = (options: URLParams) => {
 };
 
 export const buildRequestUrl = (endpoint: string, params: URLParams) => {
-  if (params.paginate) {
+  if (params.hasOwnProperty("paginate")) {
     const urlParamsString = buildUrlQueryParams(params);
     return `${endpoint}?${urlParamsString}`;
   }

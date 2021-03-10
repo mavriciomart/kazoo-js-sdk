@@ -14,7 +14,7 @@ class BaseModule {
 
   get(options?: unknown) {
     this.call = this.api.sendRequest(
-      buildRequestUrl(this.endpoint, options || {}),
+      buildRequestUrl(this.endpoint, options),
       "GET"
     );
     return this.call;
