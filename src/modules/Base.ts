@@ -13,7 +13,7 @@ class BaseModule {
     this.api = api;
   }
 
-  get(options: URLParams) {
+  get(options?: URLParams) {
     this.call = this.api.sendRequest(
       buildRequestUrl(this.endpoint, options),
       "GET"

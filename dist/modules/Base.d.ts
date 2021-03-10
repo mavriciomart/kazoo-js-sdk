@@ -5,7 +5,7 @@ declare class BaseModule {
     api: ApiService;
     call: Promise<unknown> | null;
     constructor(api: ApiService);
-    get(options: URLParams): Promise<unknown>;
+    get(options?: URLParams): Promise<unknown>;
     getById(id: string): Promise<unknown>;
     update(id: string, data: unknown): Promise<unknown>;
 }
