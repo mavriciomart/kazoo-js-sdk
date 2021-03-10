@@ -1,14 +1,10 @@
 import { ApiService } from "./../services/api";
+import BaseModule from "./Base";
 
-class Users {
-  endpoint: string;
-  api: ApiService;
-  // TODO: Add type
-  call: Promise<unknown> | null;
-
+class Users extends BaseModule {
   constructor(api: ApiService) {
+    super(api);
     this.endpoint = "users";
-    this.api = api;
   }
 
   // TODO: add type
